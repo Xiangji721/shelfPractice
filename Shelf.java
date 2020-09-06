@@ -1,41 +1,38 @@
-public class Shelf{
-    public List<MathBook> m_mathBooks;
-    public List<ChineseBook> m_chineseBooks;
-    public List<EnglishBook> m_englishBooks;
-}
-public abstract class Book {
+import java.awt.*;
+import java.util.ArrayList;
 
-};
+public class Shelf {
+    ArrayList<Book> upBookList;
+    ArrayList<Book> middleBookList;
+    ArrayList<Book> bottomBookList;
 
-class MathBook extends Book{
-    private String m_difficult;
-    public String getDifficult(){
-        return m_difficult;
+    public Shelf(ArrayList<Book> upBookList, ArrayList<Book> middleBookList, ArrayList<Book> bottomBookList) {
+        this.upBookList = upBookList;
+        this.middleBookList = middleBookList;
+        this.bottomBookList = bottomBookList;
     }
-    public void setDifficult(String level){
-        m_difficult = level;
-    }
-};
 
-class ChineseBook extends Book{
-
-};
-
-class EnglishBook extends Book{
-    enum Country{
-        British,
-        American
+    public ArrayList<Book> getUpBookList() {
+        return upBookList;
     }
-    private Country m_country;
-    public Country getCountry(){
-        return m_country;
-    }
-    public void setCountry(Country country){
-        m_country = country;
-    }
-};
 
-public void main(String[] args){
-        Shelf upShelf = new Shelf();
-        EnglishBook i_get_book = upShelf.m_englishBooks.get(0);
+    public void setUpBookList(ArrayList<Book> upBookList) {
+        this.upBookList = upBookList;
+    }
+
+    public ArrayList<Book> getMiddleBookList() {
+        return middleBookList;
+    }
+
+    public void setMiddleBookList(ArrayList<Book> middleBookList) {
+        this.middleBookList = middleBookList;
+    }
+
+    public ArrayList<Book> getBottomBookList() {
+        return bottomBookList;
+    }
+
+    public void setBottomBookList(ArrayList<Book> bottomBookList) {
+        this.bottomBookList = bottomBookList;
+    }
 }
